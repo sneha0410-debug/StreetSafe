@@ -4,7 +4,7 @@ import { useSignUp } from "@clerk/nextjs";
 
 export default function SignupPage() {
   const router = useRouter();
-  const { isLoaded, signUp } = useSignUp();
+  const { isLoaded, signUp, setActive } = useSignUp();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,12 +43,17 @@ export default function SignupPage() {
 
       setIsVerifying(true);
     } catch (err) {
-      const code = err.errors?.[0]?.code;
+      const errCode = err.errors?.[0]?.code;
 
-      if (code === "form_identifier_exists") {
+      if (errCode === "form_identifier_exists") {
+        // ✅ Show error and stop execution
         setError("Account already exists. Please login.");
+        setLoading(false);
+        return;
       } else {
         setError(err.errors?.[0]?.message || "Signup failed.");
+        setLoading(false);
+        return;
       }
     }
 
@@ -66,7 +71,8 @@ export default function SignupPage() {
       });
 
       if (completeSignUp.status === "complete") {
-        // Sign up complete! Redirect to dashboard
+        // ✅ Activate session after verification
+        await setActive({ session: completeSignUp.createdSessionId });
         router.push("/dashboard");
       }
     } catch (err) {
@@ -142,7 +148,19 @@ export default function SignupPage() {
           </form>
         )}
 
-        {error && <p className="text-red-400 text-center mt-4">{error}</p>}
+        {error && (
+          <p className="text-red-400 text-center mt-4">
+            {error}{" "}
+            {error.includes("exists") && (
+              <button
+                onClick={() => router.push("/login")}
+                className="underline text-purple-400 ml-1"
+              >
+                Login
+              </button>
+            )}
+          </p>
+        )}
 
         <p className="text-gray-400 text-sm text-center mt-6">
           Already have an account?{" "}

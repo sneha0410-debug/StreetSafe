@@ -28,14 +28,14 @@ export default function Landing() {
 
         <div className="flex gap-6">
           <button
-            className="bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-xl text-lg shadow-lg"
+            className="bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-xl text-lg shadow-lg transition"
             onClick={() => router.push("/login")}
           >
             Login
           </button>
 
           <button
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-xl text-lg shadow-lg"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-xl text-lg shadow-lg transition"
             onClick={() => router.push("/signup")}
           >
             Sign Up

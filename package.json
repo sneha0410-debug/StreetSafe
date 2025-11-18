@@ -1,5 +1,5 @@
 {
-  "name": "sanctruit-web",
+  "name": "streetsafe",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,7 @@
     "cookie": "^1.0.2",
     "jsonwebtoken": "^9.0.2",
     "leaflet": "^1.9.4",
-    "next": "^13.5.7",
+    "next": "^14.2.0",
     "parser": "^0.1.4",
     "prisma": "^6.19.0",
     "react": "^18.2.0",

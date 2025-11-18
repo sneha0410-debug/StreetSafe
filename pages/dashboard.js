@@ -1,10 +1,11 @@
-import { useUser } from "@clerk/nextjs";
+import { useUser, useAuth } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Dashboard() {
   const router = useRouter();
   const { user, isLoaded, isSignedIn } = useUser();
+  const { signOut } = useAuth();
   const [time, setTime] = useState("");
 
   // Clock effect
@@ -27,6 +28,12 @@ export default function Dashboard() {
       router.push("/login");
     }
   }, [isLoaded, isSignedIn, router]);
+
+  // Handle logout
+  const handleLogout = async () => {
+    await signOut();
+    router.push("/login");
+  };
 
   // Loading state
   if (!isLoaded) {
@@ -57,6 +64,20 @@ export default function Dashboard() {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+
+      {/* Logout Button - Top Right */}
+      <button
+        onClick={handleLogout}
+        className="absolute top-6 right-6 z-20 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition shadow-lg"
+      >
+        Logout
+      </button>
+
+      {/* User Info - Top Left */}
+      <div className="absolute top-6 left-6 z-20 bg-white/10 backdrop-blur-lg px-6 py-3 rounded-lg border border-white/20">
+        <p className="text-white text-sm">Welcome back!</p>
+        <p className="text-purple-300 font-semibold">{user?.primaryEmailAddress?.emailAddress}</p>
+      </div>
 
       {/* UI */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-10">

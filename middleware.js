@@ -1,14 +1,13 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
-export default async function middleware(req, ev) {
-  try {
-    return await clerkMiddleware()(req, ev);
-  } catch (err) {
-    console.error("Clerk middleware error:", err);
-    throw err;
-  }
-}
+// Only use Clerk middleware in Edge runtime
+export default clerkMiddleware();
 
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: [
+    // Protect all routes except static files and Next.js internals
+    "/((?!.+\\.[\\w]+$|_next).*)",
+    "/",
+    "/(api|trpc)(.*)"
+  ],
 };

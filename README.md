@@ -25,6 +25,7 @@ Bias or direct refusal from medical institutions
 
 Children on the streets often face trafficking, forced labor, and violence — creating an urgent need for a supportive platform.
 
+
 💡 Purpose of StreetSafe :
 
 StreetSafe aims to bridge the gap by offering homeless individuals and volunteers a simple platform to:
@@ -36,6 +37,7 @@ Find nearest hospitals
 Access legal aid and verified helpline numbers
 
 View a curated list of essential survival items
+
 
 This app can be used by:
 
@@ -67,6 +69,7 @@ Provides a list of essential items required to survive on the street and Include
 
 Legal aid contacts for reporting exploitation, abuse, or child trafficking
 
+
 🚀 Future Enhancements :
 
 🔄 Real-time data through IoT
@@ -86,6 +89,7 @@ Aashray Adhikar Abhiyan
 URJA Trust
 
 These organizations already work with homeless individuals and can support with data sharing, rescue operations, and rehabilitation.
+
 
 🛠️ Tech Stack :
 Frontend :

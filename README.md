@@ -18,38 +18,28 @@ Lack of affordable housing
 Access to healthcare is extremely limited for the homeless due to :
 
 Lack of identification documents
-
 High expenses
-
 Bias or direct refusal from medical institutions
-
 Children on the streets often face trafficking, forced labor, and violence — creating an urgent need for a supportive platform.
 
 💡 Purpose of StreetSafe :
 
 StreetSafe aims to bridge the gap by offering homeless individuals and volunteers a simple platform to:
-
 Locate nearby shelter homes
-
 Find nearest hospitals
-
 Access legal aid and verified helpline numbers
-
 View a curated list of essential survival items
 
 This app can be used by:
 
 Homeless individuals
-
 Social workers
-
 NGOs
-
 Volunteers
-
 Government awareness teams
 
-⭐ Key Features
+⭐ Key Features :
+
 🏠 1. Nearby Shelter Homes
 
 Uses Leaflet.js with OpenStreetMap to show nearby shelters based on the user’s real-time location.

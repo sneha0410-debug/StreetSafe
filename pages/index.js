@@ -1,20 +1,28 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Landing() {
   const router = useRouter();
+  const [videoError, setVideoError] = useState(false);
 
   return (
     <div className="relative h-screen w-screen flex items-center justify-center overflow-hidden">
       
+      {/* Fallback gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800"></div>
+
       {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src="/backvid1.mp4"
-      />
+      {!videoError && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src="/backvid1.mp4"
+          onError={() => setVideoError(true)}
+        />
+      )}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>

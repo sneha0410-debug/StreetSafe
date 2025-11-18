@@ -92,6 +92,7 @@ These organizations already work with homeless individuals and can support with 
 
 
 🛠️ Tech Stack :
+
 Frontend :
 
 Next.js (React Framework)

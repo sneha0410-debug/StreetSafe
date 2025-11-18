@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useSignIn, useAuth } from "@clerk/nextjs";
-import { supabase } from "../../lib/supabase";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -16,7 +15,6 @@ export default function LoginPage() {
   const [resetEmailSent, setResetEmailSent] = useState(false);
   const [resetCode, setResetCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [verifyingReset, setVerifyingReset] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -33,37 +31,6 @@ export default function LoginPage() {
 
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
-
-        // Sync to Supabase if user doesn't exist yet
-        try {
-          const clerkUserId = result.createdUserId;
-
-          // Check if user exists in Supabase
-          const { data: existingUser } = await supabase
-            .from("users")
-            .select("*")
-            .eq("clerk_user_id", clerkUserId)
-            .single();
-
-          // If user doesn't exist, create them
-          if (!existingUser) {
-            const { error: insertError } = await supabase
-              .from("users")
-              .insert({
-                clerk_user_id: clerkUserId,
-                email: email,
-                created_at: new Date().toISOString(),
-              });
-
-            if (insertError) {
-              console.error("Supabase sync error:", insertError);
-            }
-          }
-        } catch (dbErr) {
-          console.log("Database check:", dbErr.message);
-        }
-
-        // Redirect to dashboard
         router.push("/dashboard");
       }
     } catch (err) {
@@ -76,8 +43,6 @@ export default function LoginPage() {
         setError("No account found with this email. Please sign up first.");
       } else if (errorCode === "form_password_incorrect") {
         setError("Incorrect password. Please try again.");
-      } else if (errorCode === "verification_failed" || err.errors?.[0]?.message?.includes("verification")) {
-        setError("Email not verified. Please check your email and verify your account first.");
       } else {
         setError(err.errors?.[0]?.message || "Invalid email or password.");
       }
@@ -121,8 +86,8 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      if (newPassword.length < 6) {
-        setError("Password must be at least 6 characters.");
+      if (newPassword.length < 8) {
+        setError("Password must be at least 8 characters.");
         setLoading(false);
         return;
       }
@@ -228,7 +193,7 @@ export default function LoginPage() {
 
             <input
               type="password"
-              placeholder="New Password (min 6 characters)"
+              placeholder="New Password (min 8 characters)"
               className="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
@@ -255,6 +220,8 @@ export default function LoginPage() {
           <button
             onClick={() => {
               setResetEmailSent(false);
+              setResetCode("");
+              setNewPassword("");
               setError("");
             }}
             className="w-full mt-4 text-gray-400 hover:text-gray-300 underline text-sm"
@@ -339,14 +306,12 @@ export default function LoginPage() {
             Forgot Password?
           </button>
 
-          <p className="text-gray-400 text-sm">
-            <button
-              onClick={() => router.push("/signup")}
-              className="text-purple-400 hover:text-purple-300 underline"
-            >
-              Sign Up
-            </button>
-          </p>
+          <button
+            onClick={() => router.push("/signup")}
+            className="text-purple-400 hover:text-purple-300 underline text-sm"
+          >
+            Sign Up
+          </button>
         </div>
       </div>
     </div>

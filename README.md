@@ -1,119 +1,93 @@
-# 🛡️ StreetSafe – Support Platform for Homeless Individuals
+# 🛡️ StreetSafe – A Support Platform for Homeless Individuals
 
-StreetSafe is a web-based support platform designed to assist homeless individuals, social workers, NGOs, and volunteers by providing easy access to nearby shelter homes, hospitals, legal aid, and essential survival resources. The platform also aims to raise awareness about the growing homelessness crisis in India.
+A web application designed to assist homeless individuals by helping them locate nearby shelter homes, hospitals, and legal/helpline services, while spreading awareness about the growing homelessness crisis in India.
 
 ---
 
 ## 🌍 Problem Statement
 
-Homelessness in India is increasing at an alarming rate. Many individuals and families are forced to live on the streets due to:
+Homelessness in India is rapidly rising. Many individuals are forced to sleep on streets and work under harsh conditions. Children, too, are increasingly found living on streets due to:
 
 - Abuse or abandonment  
-- Financial instability  
+- Financial instability at home  
 - Long-term unemployment  
 - Lack of affordable housing  
 
-Access to **healthcare** remains extremely limited for homeless individuals because of:
+Access to healthcare is extremely limited for the homeless due to:
 
-- Absence of identification documents  
-- High medical costs  
-- Bias or denial of treatment by institutions  
+- Lack of identification documents  
+- High expenses  
+- Bias or direct refusal from medical institutions  
 
-Children living on the streets are particularly vulnerable to:
-
-- Human trafficking  
-- Forced labor  
-- Physical and emotional abuse  
-
-There is an urgent need for a unified and accessible platform that provides immediate support and guidance.
+Children on the streets often face trafficking, forced labor, and violence — creating an urgent need for a supportive platform.
 
 ---
 
 ## 💡 Purpose of StreetSafe
 
-StreetSafe aims to bridge the gap between homeless individuals and essential support services by offering a simple, location-based platform to:
+StreetSafe aims to bridge the gap by offering homeless individuals and volunteers a simple platform to:
 
 - Locate nearby shelter homes  
-- Find nearby hospitals  
+- Find nearest hospitals  
 - Access legal aid and verified helpline numbers  
-- Learn about essential street survival items  
+- View a curated list of essential survival items  
 
----
-
-## 👥 Who Can Use This Platform?
+This app can be used by:
 
 - Homeless individuals  
 - Social workers  
 - NGOs  
 - Volunteers  
-- Government awareness and outreach teams  
+- Government awareness teams  
 
 ---
 
 ## ⭐ Key Features
 
 ### 🏠 1. Nearby Shelter Homes
-- Uses **Leaflet.js** with **OpenStreetMap**
-- Displays nearby shelter homes based on real-time user location
+Uses Leaflet.js with OpenStreetMap to show nearby shelters based on the user’s real-time location.
 
 ### 🏥 2. Nearby Hospitals
-- Shows nearest hospitals and healthcare facilities
-- Location-based search using map coordinates
+Displays nearest medical facilities using Leaflet maps and location coordinates.
 
 ### 📦 3. Street Survival Kit
-- Curated list of essential items needed for survival on the streets
-- Includes:
-  - Clothing
-  - Toiletries
-  - Sleeping gear
-  - Basic hygiene items
+Provides a list of essential items required to survive on the street and includes necessities like clothes, toiletries, sleeping gear, etc.
 
 ### ⚖️ 4. Legal Aid & Helplines
-- Verified legal aid resources
-- Helpline numbers for:
-  - Abuse reporting
-  - Child trafficking
-  - Exploitation and violence
+Legal aid contacts for reporting exploitation, abuse, or child trafficking.
 
 ---
 
 ## 🚀 Future Enhancements
 
-### 🔄 Real-Time Assistance via IoT
-- IoT sensors in public areas to detect individuals in need
-- Automatic alerts to nearby shelter homes regarding availability
+### 🔄 Real-Time Data Through IoT
+IoT sensors placed near public areas could help detect people in need and automatically notify nearby shelter homes about availability.
 
-### 🤝 NGO Collaborations
-Planned integration with organizations such as:
+### 🤝 Collaborations with NGOs
+Plans to integrate and collaborate with:
 
-- **Salaam Baalak Trust**
-- **Aashray Adhikar Abhiyan**
-- **URJA Trust**
+- Salaam Baalak Trust  
+- Aashray Adhikar Abhiyan  
+- URJA Trust  
 
-These NGOs can assist with:
-- Data sharing
-- Rescue operations
-- Rehabilitation and long-term support
+These organizations already work with homeless individuals and can support with data sharing, rescue operations, and rehabilitation.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js** (React Framework)
-- **Tailwind CSS** for styling
+- Next.js (React Framework)  
+- Tailwind CSS for styling  
 
 ### Maps
-- **Leaflet.js**
-- **OpenStreetMap** tiles
+- Leaflet.js for interactive maps  
+- OpenStreetMap tiles  
 
-### Backend & Authentication
-- **Supabase** (Database & backend services)
-- **Clerk** (User authentication)
+### Backend / Authentication
+- Supabase (Database & backend services)  
+- Clerk (User authentication)  
 
 ### APIs & Services
 - HTML5 Geolocation API  
 - Leaflet map rendering & markers  
-
----
-

@@ -90,7 +90,7 @@ These organizations already work with homeless individuals and can support with 
 - Leaflet map rendering & markers  
 
 ---
-⚙️ Getting Started
+## ⚙️ Getting Started
 
 ### Prerequisites :
 -Node.js
@@ -111,7 +111,7 @@ npm run dev
 Open http://localhost:3000 in your browser.
 
 ---
-🤝 Contributions
+## 🤝 Contributions
 
 Contributions, ideas, and feedback are welcome. This project is built with the intention of creating real-world social impact.
 

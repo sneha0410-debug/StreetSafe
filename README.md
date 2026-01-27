@@ -95,11 +95,12 @@ These organizations already work with homeless individuals and can support with 
 ### Homepage
 ![Homepage](homepage.png)
 
-### Emergency Contacts
-![Emergency Contacts](emergency_contacts.png)
 
 ### Map
 ![Map](map.png)
+
+### Emergency Contacts
+![Emergency Contacts](emergency_contacts.png)
 
 ---
 ## ⚙️ Getting Started

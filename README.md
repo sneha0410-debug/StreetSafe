@@ -87,7 +87,19 @@ These organizations already work with homeless individuals and can support with 
 
 ### APIs & Services
 - HTML5 Geolocation API  
-- Leaflet map rendering & markers  
+- Leaflet map rendering & markers
+
+---
+## Screenshots
+
+### Homepage
+![Homepage](homepage.png)
+
+### Emergency Contacts
+![Emergency Contacts](emergency_contacts.png)
+
+### Map
+![Map](map.png)
 
 ---
 ## ⚙️ Getting Started

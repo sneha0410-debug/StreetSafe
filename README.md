@@ -1,44 +1,35 @@
 # 🛡️ StreetSafe – A Support Platform for Homeless Individuals
 
-A web application designed to assist homeless individuals by helping them locate nearby shelter homes, hospitals, and legal/helpline services, while spreading awareness about the growing homelessness crisis in India.
+StreetSafe is a location-based web platform that helps homeless individuals, volunteers, and social workers find nearby shelters, hospitals, and emergency resources easily.
 
 ---
 
 ## 🌍 Problem Statement
 
-Homelessness in India is rapidly rising. Many individuals are forced to sleep on streets and work under harsh conditions. Children, too, are increasingly found living on streets due to:
+Homelessness in India is a growing crisis. Many individuals are forced to live on the streets due to poverty, unemployment, abuse, abandonment, or lack of affordable housing. Access to basic necessities—such as shelter, healthcare, and legal support—is extremely limited for homeless populations.
 
-- Abuse or abandonment  
-- Financial instability at home  
-- Long-term unemployment  
-- Lack of affordable housing  
-
-Access to healthcare is extremely limited for the homeless due to:
-
-- Lack of identification documents  
-- High expenses  
-- Bias or direct refusal from medical institutions  
-
-Children on the streets often face trafficking, forced labor, and violence — creating an urgent need for a supportive platform.
+Children living on the streets are especially vulnerable to exploitation, forced labor, trafficking, and violence. Despite the presence of NGOs and government helplines, information is often fragmented and hard to access at the right time.
 
 ---
 
 ## 💡 Purpose of StreetSafe
 
-StreetSafe aims to bridge the gap by offering homeless individuals and volunteers a simple platform to:
+StreetSafe aims to bridge this gap by providing a simple, location-aware platform that centralizes critical resources for people in need.
 
-- Locate nearby shelter homes  
-- Find nearest hospitals  
-- Access legal aid and verified helpline numbers  
-- View a curated list of essential survival items  
+The platform enables users to:
 
-This app can be used by:
+-Locate nearby shelter homes
+-Find the nearest hospitals
+-Access verified legal aid and emergency helpline numbers
+-View a curated list of essential survival items
 
-- Homeless individuals  
-- Social workers  
-- NGOs  
-- Volunteers  
-- Government awareness teams  
+Intended users:
+
+-Homeless individuals
+-Social workers
+-NGOs
+-Volunteers
+-Government awareness teams
 
 ---
 
@@ -57,7 +48,13 @@ Provides a list of essential items required to survive on the street and include
 Legal aid contacts for reporting exploitation, abuse, or child trafficking.
 
 ---
+🚧 Project Status
 
+StreetSafe is currently an MVP (Minimum Viable Product).
+
+Core location-based features are implemented. Future iterations will focus on real-time data integration, NGO collaboration, and scalability.
+
+---
 ## 🚀 Future Enhancements
 
 ### 🔄 Real-Time Data Through IoT
@@ -91,3 +88,31 @@ These organizations already work with homeless individuals and can support with 
 ### APIs & Services
 - HTML5 Geolocation API  
 - Leaflet map rendering & markers  
+
+---
+⚙️ Getting Started
+
+### Prerequisites :
+-Node.js
+-npm or yarn
+
+### Installation :
+git clone https://github.com/sneha0410-debug/streetsafe.git
+cd streetsafe
+npm install
+
+### Environment Variables :
+
+Create a .env.local file and add your Supabase and Clerk credentials.
+
+### Run Locally :
+npm run dev
+
+Open http://localhost:3000 in your browser.
+
+---
+🤝 Contributions
+
+Contributions, ideas, and feedback are welcome. This project is built with the intention of creating real-world social impact.
+
+
